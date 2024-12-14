@@ -9,29 +9,30 @@
             font-family: Arial, sans-serif;
             background-color: pink;
             display: flex;
+            flex-direction: column; /* Make the body a flex container with column direction */
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            min-height: 100vh; /* Ensure the body takes up full viewport height */
             margin: 0;
         }
 
         .gallery-container {
             text-align: center;
-            max-width: 650px; /* Set a maximum width for the container */
+            max-width: 100%;
+            overflow-x: auto; /* Enable horizontal scrolling */
+            white-space: nowrap; /* Prevent line breaks */
         }
 
         .gallery {
-            display: flex;
-            flex-wrap: wrap; /* Allow images to wrap to the next line */
-            justify-content: center; /* Center the images */
-            overflow: hidden;
+            display: inline-block;
         }
 
         .gallery-item {
             width: 150px; /* Set a fixed width for the images */
             height: 150px; /* Set a fixed height for the images */
-            margin: 10px; /* Add margin around images */
+            margin: 10px;
             transition: transform 0.5s ease-in-out;
+            display: inline-block; /* Keep images inline */
         }
 
         .controls {
@@ -51,6 +52,12 @@
 
         button:hover {
             background-color: pink;
+        }
+
+        footer {
+            text-align: center;
+            font-size: 16px;
+            margin-top: 40px; /* Increase margin-top to bring the footer a bit higher */
         }
     </style>
 </head>
@@ -72,12 +79,15 @@
             <button onclick="nextImage()">Next</button>
         </div>
     </div>
+    <footer>
+        Designed and developed by Janathul Firdhous &copy; 2024
+    </footer>
     <script>
         let currentIndex = 0;
 
         function showImage(index) {
             const gallery = document.querySelector('.gallery');
-            gallery.style.transform = `translateX(${-index * 170}px)`;  // Adjust the translate value to match the image width plus margin
+            gallery.style.transform = `translateX(${-index * 170}px)`;  
         }
 
         function prevImage() {
@@ -92,5 +102,6 @@
             showImage(currentIndex);
         }
     </script>
+
 </body>
 </html>

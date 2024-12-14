@@ -1,31 +1,3 @@
-# Ex.08 Design of Interactive Image Gallery
-## Date:14.12.2024
-
-## AIM:
-To design a web application for an inteactive image gallery with minimum five images.
-
-## DESIGN STEPS:
-
-### Step 1:
-Clone the github repository and create Django admin interface.
-
-### Step 2:
-Change settings.py file to allow request from all hosts.
-
-### Step 3:
-Use CSS for positioning and styling.
-
-### Step 4:
-Write JavaScript program for implementing interactivity.
-
-### Step 5:
-Validate the HTML and CSS code.
-
-### Step 6:
-Publish the website in the given URL.
-
-## PROGRAM :
-```
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -37,29 +9,30 @@ Publish the website in the given URL.
             font-family: Arial, sans-serif;
             background-color: pink;
             display: flex;
+            flex-direction: column; 
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            min-height: 100vh; 
             margin: 0;
         }
 
         .gallery-container {
             text-align: center;
-            max-width: 650px; /* Set a maximum width for the container */
+            max-width: 100%;
+            overflow-x: auto; 
+            white-space: nowrap; 
         }
 
         .gallery {
-            display: flex;
-            flex-wrap: wrap; /* Allow images to wrap to the next line */
-            justify-content: center; /* Center the images */
-            overflow: hidden;
+            display: inline-block;
         }
 
         .gallery-item {
-            width: 150px; /* Set a fixed width for the images */
-            height: 150px; /* Set a fixed height for the images */
-            margin: 10px; /* Add margin around images */
+            width: 150px; 
+            height: 150px; 
+            margin: 10px;
             transition: transform 0.5s ease-in-out;
+            display: inline-block; 
         }
 
         .controls {
@@ -67,18 +40,24 @@ Publish the website in the given URL.
         }
 
         button {
-            padding: 20px 40px; /* Increase the size of the buttons */
+            padding: 20px 40px; 
             margin: 0 10px;
             border: none;
             border-radius: 4px;
             background-color: #28a745;
             color: white;
-            font-size: 18px; /* Increase font size for better readability */
+            font-size: 18px; 
             cursor: pointer;
         }
 
         button:hover {
             background-color: pink;
+        }
+
+        footer {
+            text-align: center;
+            font-size: 16px;
+            margin-top: 40px; 
         }
     </style>
 </head>
@@ -100,12 +79,15 @@ Publish the website in the given URL.
             <button onclick="nextImage()">Next</button>
         </div>
     </div>
+    <footer>
+        Designed and developed by Janathul Firdhous &copy; 2024
+    </footer>
     <script>
         let currentIndex = 0;
 
         function showImage(index) {
             const gallery = document.querySelector('.gallery');
-            gallery.style.transform = `translateX(${-index * 170}px)`;  // Adjust the translate value to match the image width plus margin
+            gallery.style.transform = `translateX(${-index * 170}px)`;  
         }
 
         function prevImage() {
@@ -120,12 +102,6 @@ Publish the website in the given URL.
             showImage(currentIndex);
         }
     </script>
+
 </body>
 </html>
-```
-## OUTPUT:
-![alt text](jannath/igalleryapp/static/g01.png)
-
-
-## RESULT:
-The program for designing an interactive image gallery using HTML, CSS and JavaScript is executed successfully.
