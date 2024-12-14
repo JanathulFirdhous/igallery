@@ -45,20 +45,20 @@ Publish the website in the given URL.
 
         .gallery-container {
             text-align: center;
-            max-width: 650px; /* Set a maximum width for the container */
+            max-width: 650px; 
         }
 
         .gallery {
             display: flex;
-            flex-wrap: wrap; /* Allow images to wrap to the next line */
-            justify-content: center; /* Center the images */
+            flex-wrap: wrap; 
+            justify-content: center; 
             overflow: hidden;
         }
 
         .gallery-item {
-            width: 150px; /* Set a fixed width for the images */
-            height: 150px; /* Set a fixed height for the images */
-            margin: 10px; /* Add margin around images */
+            width: 150px; 
+            height: 150px; 
+            margin: 10px; 
             transition: transform 0.5s ease-in-out;
         }
 
@@ -67,13 +67,13 @@ Publish the website in the given URL.
         }
 
         button {
-            padding: 20px 40px; /* Increase the size of the buttons */
+            padding: 20px 40px; 
             margin: 0 10px;
             border: none;
             border-radius: 4px;
             background-color: #28a745;
             color: white;
-            font-size: 18px; /* Increase font size for better readability */
+            font-size: 18px; 
             cursor: pointer;
         }
 
@@ -105,7 +105,7 @@ Publish the website in the given URL.
 
         function showImage(index) {
             const gallery = document.querySelector('.gallery');
-            gallery.style.transform = `translateX(${-index * 170}px)`;  // Adjust the translate value to match the image width plus margin
+            gallery.style.transform = `translateX(${-index * 170}px)`; 
         }
 
         function prevImage() {
