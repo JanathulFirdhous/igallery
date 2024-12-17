@@ -63,11 +63,6 @@ Publish the website in the given URL.
             transition: transform 0.3s ease;
         }
 
-        .gallery-item:hover {
-            transform: scale(1.5); 
-            z-index: 1; 
-        }
-
         footer {
             text-align: center;
             font-size: 16px;
@@ -92,8 +87,23 @@ Publish the website in the given URL.
     <footer>
         Designed and developed by Janathul Firdhous &copy; 2024
     </footer>
+    <script>
+        document.querySelectorAll('.gallery-item').forEach(item => {
+            item.addEventListener('mouseover', () => {
+                item.style.transform = 'scale(1.5)';
+                item.style.zIndex = '1';
+            });
+            item.addEventListener('mouseout', () => {
+                item.style.transform = 'scale(1)';
+                item.style.zIndex = '0';
+            });
+        });
+    </script>
 </body>
 </html>
+
+
+  
 ```
 
 
